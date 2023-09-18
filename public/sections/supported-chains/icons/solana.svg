@@ -1,0 +1,34 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="80" height="80" rx="40" fill="black"/>
+  <g clip-path="url(#clip0_5542_33371)">
+    <path
+      d="M23.7973 50.0033C24.087 49.7107 24.4853 49.54 24.9077 49.54H63.216C63.916 49.54 64.266 50.3934 63.7712 50.8933L56.2037 58.5372C55.914 58.8298 55.5157 59.0004 55.0933 59.0004H16.785C16.085 59.0004 15.735 58.147 16.2298 57.6472L23.7973 50.0033Z"
+      fill="url(#paint0_linear_5542_33371)"/>
+    <path
+      d="M23.7973 21.4633C24.099 21.1707 24.4973 21 24.9077 21H63.216C63.916 21 64.266 21.8534 63.7712 22.3532L56.2036 29.9971C55.914 30.2897 55.5157 30.4604 55.0933 30.4604H16.785C16.085 30.4604 15.735 29.607 16.2298 29.1072L23.7973 21.4633Z"
+      fill="url(#paint1_linear_5542_33371)"/>
+    <path
+      d="M56.2037 35.642C55.914 35.3494 55.5157 35.1787 55.0933 35.1787H16.785C16.085 35.1787 15.735 36.0321 16.2298 36.5319L23.7973 44.1758C24.087 44.4684 24.4853 44.6391 24.9077 44.6391H63.216C63.916 44.6391 64.266 43.7857 63.7712 43.2859L56.2037 35.642Z"
+      fill="url(#paint2_linear_5542_33371)"/>
+  </g>
+  <defs>
+    <linearGradient id="paint0_linear_5542_33371" x1="59.5564" y1="16.4341" x2="32.6231" y2="67.5066"
+                    gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00FFA3"/>
+      <stop offset="1" stop-color="#DC1FFF"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_5542_33371" x1="47.9638" y1="10.3203" x2="21.0306" y2="61.3928"
+                    gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00FFA3"/>
+      <stop offset="1" stop-color="#DC1FFF"/>
+    </linearGradient>
+    <linearGradient id="paint2_linear_5542_33371" x1="53.7232" y1="13.3579" x2="26.79" y2="64.4304"
+                    gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00FFA3"/>
+      <stop offset="1" stop-color="#DC1FFF"/>
+    </linearGradient>
+    <clipPath id="clip0_5542_33371">
+      <rect width="48" height="38" fill="white" transform="translate(16 21)"/>
+    </clipPath>
+  </defs>
+</svg>
