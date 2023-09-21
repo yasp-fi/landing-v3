@@ -15,11 +15,11 @@
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.1",
     "@lottiefiles/react-lottie-player": "3.5.3",
-    "@next/font": "13.2.3",
+    "@next/font": "^13.5.2",
     "@yasp/interface-kit": "workspace:*",
     "@yasp/models": "workspace:*",
     "mixpanel-browser": "^2.45.0",
-    "next": "^13.4.19",
+    "next": "^13.5.2",
     "nprogress": "0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -34,7 +34,7 @@
     "toformat": "2.0.0"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^13.4.19",
+    "@next/eslint-plugin-next": "^13.5.2",
     "@types/mixpanel-browser": "^2.47.1",
     "@types/node": "^17.0.12",
     "@types/nprogress": "^0.2.0",

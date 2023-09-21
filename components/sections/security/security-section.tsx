@@ -197,15 +197,12 @@ const MobileImage = styled(Row)`
 `;
 
 export const SecuritySection: React.FC = () => {
-  const clientOnly = typeof window !== 'undefined';
-  const isBigScreen = clientOnly && window.innerWidth > 900;
-
   return (
     <LandingContentBlock>
       <SecurityLayout>
         <ElementsRow>
           <SecurityBlock>
-            {isBigScreen ? (
+            {/* {isBigScreen ? (
               <h1>
                 Security Is Not <br />A Feature,
                 <br />
@@ -213,7 +210,7 @@ export const SecuritySection: React.FC = () => {
                 <br />
                 One That YaspFi Is Built On
               </h1>
-            ) : (
+            ) : ( */}
               <h1>
                 Security is not a feature,
                 <br />
@@ -221,7 +218,7 @@ export const SecuritySection: React.FC = () => {
                 <br />
                 one that YaspFi is built on
               </h1>
-            )}
+            {/* )} */}
           </SecurityBlock>
 
           <GridElements>

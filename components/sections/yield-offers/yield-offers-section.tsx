@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import React from 'react';
-import styled from 'styled-components';
-import Image from 'next/image';
-import assetsImage from '/public/sections/yield-offers/assets-image.svg';
-import trustScore from '/public/sections/yield-offers/trust-score.svg';
-import trustScore_mobile from '/public/sections/yield-offers/trust-score-mobile.svg';
-import { LandingContentBlock } from '../../landing-content-block/landing-content-block';
-import { Column, Row } from '../../kit/layout';
-import { Button } from '../../button';
-import useMixpanelContext from '../../../lib/mixpanel/MixpanelContextLanding';
-import { Icon } from '../../icon';
-import arrow from '/public/sections/yield-offers/arrow-white.svg';
+import React from "react";
+import styled from "styled-components";
+import Image from "next/image";
+import assetsImage from "/public/sections/yield-offers/assets-image.svg";
+import trustScore from "/public/sections/yield-offers/trust-score.svg";
+import trustScore_mobile from "/public/sections/yield-offers/trust-score-mobile.svg";
+import { LandingContentBlock } from "../../landing-content-block/landing-content-block";
+import { Column, Row } from "../../kit/layout";
+import { Button } from "../../button";
+import useMixpanelContext from "../../../lib/mixpanel/MixpanelContextLanding";
+import { Icon } from "../../icon";
+import arrow from "/public/sections/yield-offers/arrow-white.svg";
 
 const PortfolioContentBlock = styled.div`
   margin-top: 64px;
@@ -33,17 +33,17 @@ const PortfolioContentBlock = styled.div`
     gap: 32px;
   }
 
-  @media (max-width: 768px)  {
+  @media (max-width: 768px) {
     gap: 24px;
     margin-top: 32px;
   }
 
-  @media (max-width: 550px)  {
+  @media (max-width: 550px) {
     flex-direction: column;
     gap: 12px;
   }
 
-  @media (max-width: 520px)  {
+  @media (max-width: 520px) {
     margin-top: 24px;
   }
 
@@ -83,7 +83,7 @@ const PortfolioContentBlock = styled.div`
 
     h3 {
       margin: 0;
-      color: #FFF;
+      color: #fff;
       font-size: 16px;
       font-style: normal;
       font-weight: 700;
@@ -125,7 +125,7 @@ const PortfolioImageDiv = styled(Column)`
     max-width: calc(50% - 8px);
   }
 
-  @media (max-width: 700px)  {
+  @media (max-width: 700px) {
     justify-content: center;
   }
 
@@ -150,7 +150,7 @@ const PortfolioTextDiv = styled(Column)`
     width: calc(50% - 8px);
   }
 
-  @media (max-width: 550px)  {
+  @media (max-width: 550px) {
     width: 100%;
     order: 1;
   }
@@ -185,7 +185,7 @@ const AssetItem = styled(Column)`
 
   h2 {
     margin: 0;
-    color: #FFD15C;
+    color: #ffd15c;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
@@ -243,7 +243,7 @@ const TrustScore = styled(Column)`
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.12);
 
-  @media (max-width: 768px)  {
+  @media (max-width: 768px) {
     margin-top: 16px;
   }
 
@@ -253,7 +253,7 @@ const TrustScore = styled(Column)`
   }
 
   h1 {
-    color: #FFF;
+    color: #fff;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
@@ -272,7 +272,7 @@ const TrustScore = styled(Column)`
   }
 
   p {
-    color: #FFF;
+    color: #fff;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -301,24 +301,17 @@ const TrustScore = styled(Column)`
 
 export const YieldOffersSection: React.FC = () => {
   const mixpanel = useMixpanelContext();
-  const clientOnly = typeof window !== 'undefined';
-  const isBigScreen = clientOnly && window.innerWidth > 900;
 
   return (
     <LandingContentBlock>
       <PortfolioContentBlock>
         <PortfolioTextDiv>
-          {isBigScreen ? (
-            <h1>
-              We Aggregate Valuable DeFi Opportunities For Your Sustainable Yield
-            </h1>
-          ) : (
-            <h1>
-              We aggregate all DeFi opportunities for your sustainable yield
-            </h1>
-          )}
-          <p className={'main_p'}>
-            Access a range of yield offers designed to seek the most efficient path to maximise your returns
+          <h1>
+            We Aggregate Valuable DeFi Opportunities For Your Sustainable Yield
+          </h1>
+          <p className={"main_p"}>
+            Access a range of yield offers designed to seek the most efficient
+            path to maximise your returns
             <br />
             <br />
             Park your coins into DeFi offers, YaspFi will do the rest
@@ -346,57 +339,60 @@ export const YieldOffersSection: React.FC = () => {
           <ImageFullWidth src={assetsImage} alt="assets image" />
           <Button
             id="for-desctop"
-            as={'a'}
-            href={'https://yasp.fi/app/yield-offers'}
-            $color={'#0085FF'}
+            as={"a"}
+            href={"https://yasp.fi/app/yield-offers"}
+            $color={"#0085FF"}
             $onHoverColor={
-              'linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #0085FF'
+              "linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #0085FF"
             }
-            target={'_blank'}
-            $padding={'12px 16px'}
-            $radius={'12px'}
+            target={"_blank"}
+            $padding={"12px 16px"}
+            $radius={"12px"}
             onClick={() => {
               mixpanel.track(`Landing: Open App "explore" button`);
             }}
           >
             <h3>Explore</h3>
-            <Icon
-              src={arrow.src}
-              $size={'24px'}
-              alt={`arrow icon`}
-            />
+            <Icon src={arrow.src} $size={"24px"} alt={`arrow icon`} />
           </Button>
         </PortfolioImageDiv>
 
         <Button
           id="for-mobile"
-          as={'a'}
-          href={'https://yasp.fi/app/yield-offers'}
-          $color={'#0085FF'}
+          as={"a"}
+          href={"https://yasp.fi/app/yield-offers"}
+          $color={"#0085FF"}
           $onHoverColor={
-            'linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #0085FF'
+            "linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #0085FF"
           }
-          target={'_blank'}
-          $padding={'12px 16px'}
-          $radius={'12px'}
+          target={"_blank"}
+          $padding={"12px 16px"}
+          $radius={"12px"}
           onClick={() => {
             mixpanel.track(`Landing: Open App "explore" button`);
           }}
         >
           <h3>Explore</h3>
-          <Icon
-            src={arrow.src}
-            $size={'24px'}
-            alt={`arrow icon`}
-          />
+          <Icon src={arrow.src} $size={"24px"} alt={`arrow icon`} />
         </Button>
       </PortfolioContentBlock>
 
       <TrustScore>
         <h1>Open Trust Score Model</h1>
-        <p>A simple tool for your data-driven decisions with more than 15 trust parameters weighed into a single comprehensible score</p>
-        <ImageFullWidth src={trustScore} alt="trust score image" id='trust-score-desctop' />
-        <ImageFullWidth src={trustScore_mobile} alt="trust score image" id='trust-score-mobile' />
+        <p>
+          A simple tool for your data-driven decisions with more than 15 trust
+          parameters weighed into a single comprehensible score
+        </p>
+        <ImageFullWidth
+          src={trustScore}
+          alt="trust score image"
+          id="trust-score-desctop"
+        />
+        <ImageFullWidth
+          src={trustScore_mobile}
+          alt="trust score image"
+          id="trust-score-mobile"
+        />
       </TrustScore>
     </LandingContentBlock>
   );
