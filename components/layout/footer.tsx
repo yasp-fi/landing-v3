@@ -128,6 +128,7 @@ const FooterBlock = styled.footer`
     @media (max-width: 465px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: 32px;
     }
   }
 
@@ -177,8 +178,13 @@ const FooterLink = styled.a`
     transform: scaleX(1);
   }
 
-  @media (max-width: 465px) {
+  @media (max-width: 540px) {
     text-align: start;
+    max-width: 100px;
+  }
+
+  @media (max-width: 465px) {
+    max-width: max-content;
   }
 `;
 

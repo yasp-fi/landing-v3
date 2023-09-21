@@ -63,6 +63,18 @@ const HeaderRightButtons = styled.div`
       display: none;
     }
   }
+
+  .open-app-desktop {
+    @media (max-width: 340px) {
+      display: none;
+    }
+  }
+
+  .open-app-mobile {
+    @media (min-width: 341px) {
+      display: none;
+    }
+  }
 `;
 
 const CompanyName = styled.div`
@@ -182,7 +194,9 @@ export const Header = () => {
             <p color='#fff'>Create Wallet</p>
           </HugeButtons>
 
-          <HugeButtons
+          <>
+            <HugeButtons
+            className='open-app-desktop'
             as={'a'}
             href={'https://yasp.fi/app/yield-offers'}
             $color={'#0085FF'}
@@ -195,9 +209,28 @@ export const Header = () => {
             onClick={() => {
               mixpanel.track(`Landing: Open App button (Header)`);
             }}
-          >
-            <p color='#fff'>Open Web App</p>
-          </HugeButtons>
+            >
+              <p color='#fff'>Open Web App</p>
+            </HugeButtons>
+
+            <HugeButtons
+              className='open-app-mobile'
+              as={'a'}
+              href={'https://yasp.fi/app/yield-offers'}
+              $color={'#0085FF'}
+              target={'_blank'}
+              $padding={'12px 24px'}
+              $radius={'12px'}
+              $onHoverColor={
+                'linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #0085FF'
+              }
+              onClick={() => {
+                mixpanel.track(`Landing: Open App button (Header)`);
+              }}
+            >
+              <p color='#fff'>Web App</p>
+            </HugeButtons>
+          </>
         </HeaderRightButtons>
       </HeaderBlock>
     </LandingContentBlock>

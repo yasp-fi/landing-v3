@@ -1,28 +1,31 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { breakPointsConf, colors } from "../../lib/constants";
-import React, { useCallback, useRef, useState } from "react";
-import styled from "styled-components";
-import { Player } from "@lottiefiles/react-lottie-player";
+import Image from 'next/image';
+import { breakPointsConf, colors } from '../../lib/constants';
+import React, { useRef, useState, useCallback } from 'react';
+import styled from 'styled-components';
+import { Player } from '@lottiefiles/react-lottie-player';
 
-import desktop_img from "../../public/sections/hero-section/web-app-image.png";
-import extensions_img from "../../public/sections/hero-section/browser-extension-image.png";
-import mobile_img from "../../public/sections/hero-section/mobile-app-image.png";
-import newMainPageImage from "../../public/new-background-image-big.png";
-import chooseDeviseIcon from "../../public/sections/hero-section/choose-devise-icon.svg";
-import newMainPageImageMobile from "../../public/new-background-image-mobile.png";
-import { Row, Column } from "./overview/overview-section";
-import animatedArrows from "../../public/animated_arrows.json";
+import desktop_img from '../../public/sections/hero-section/web-app-image.png';
+import extensions_img from '../../public/sections/hero-section/browser-extension-image.png';
+import mobile_img from '../../public/sections/hero-section/mobile-app-image.png';
+import newMainPageImage from '../../public/new-background-image-big.png';
+import chooseDeviseIcon from '../../public/sections/hero-section/choose-devise-icon.svg';
+import newMainPageImageMobile from '../../public/new-background-image-mobile.png';
+import {
+  Row,
+  Column,
+} from './overview/overview-section';
+import animatedArrows from '../../public/animated_arrows.json';
 
-import { Button } from "../button";
-import { Header } from "../layout/header";
+import { Button } from '../button';
+import { Header } from '../layout/header';
 
-import Modal from "react-modal";
-import { SubscribeModal } from "./subscribe-modal";
-import useMixpanelContext from "../../lib/mixpanel/MixpanelContextLanding";
-import chrome from "/public/icons/chrome-white-icon.svg";
-import { Icon } from "../icon";
+import Modal from 'react-modal';
+import { SubscribeModal } from './subscribe-modal';
+import useMixpanelContext from '../../lib/mixpanel/MixpanelContextLanding';
+import chrome from '/public/icons/chrome-white-icon.svg';
+import { Icon } from '../icon';
 
 const BlockSection = styled.section`
   position: relative;
@@ -30,14 +33,14 @@ const BlockSection = styled.section`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background: #151a21;
+  background: #151A21;
 
   @media (max-width: 768px) {
     max-width: 100%;
   }
 
-  background-color: #171d25;
-  background-image: url("${newMainPageImage.src}");
+  background-color: #171D25;
+  background-image: url('${newMainPageImage.src}');
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -87,7 +90,7 @@ const BlockSection = styled.section`
   }
 
   @media (max-width: 575px) {
-    background-image: url("${newMainPageImageMobile.src}");
+    background-image: url('${newMainPageImageMobile.src}');
     background-position: 0 0;
     background-size: 100vw;
   }
@@ -176,6 +179,16 @@ const TitleBlock = styled.div`
     letter-spacing: -1.3px;
     color: #ffffff;
 
+    @media (max-width: 1000px) {
+      font-size: 48px;
+      line-height: 56px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 32px;
+      line-height: 38px;
+    }
+
     @media (max-width: 575px) {
       text-align: center;
       white-space: normal;
@@ -195,16 +208,6 @@ const TitleBlock = styled.div`
 
     .pink {
       color: #ff8bb3;
-    }
-
-    @media (max-width: 1000px) {
-      font-size: 48px;
-      line-height: 56px;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 32px;
-      line-height: 38px;
     }
   }
 `;
@@ -231,9 +234,8 @@ const ProductsSection = styled.div`
 
   .choose-devise {
     align-items: flex-start;
-    background: linear-gradient(124deg, #8a50cf 0%, #4a22d2 100%),
-      linear-gradient(212deg, #4e5968 1.37%, #313f54 100%);
-    box-shadow: -11px 35px 40px 0px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(124deg, #8A50CF 0%, #4A22D2 100%), linear-gradient(212deg, #4E5968 1.37%, #313F54 100%);
+    box-shadow: -11px 35px 40px 0px rgba(0, 0, 0, 0.30);
 
     @media (max-width: 1050px) {
       display: none;
@@ -251,7 +253,7 @@ const ProductsSection = styled.div`
     }
 
     h2 {
-      color: #fff;
+      color: #FFF;
       font-size: 32px;
       font-style: normal;
       font-weight: 700;
@@ -276,7 +278,7 @@ const ProductCard = styled.div`
   gap: 12px;
 
   border-radius: 24px;
-  background: #1a222e;
+  background: #1A222E;
 
   @media (max-width: 1280px) {
     width: 100%;
@@ -294,7 +296,7 @@ const ProductCard = styled.div`
     gap: 12px;
   }
 
-  ${Button} {
+  .card-button {
     width: 100%;
     text-align: center;
     border-radius: 12px;
@@ -316,11 +318,13 @@ const ProductCard = styled.div`
       font-style: normal;
       font-weight: 700;
       letter-spacing: -0.2px;
+      white-space: nowrap;
     }
   }
 
   .has-border {
-    border: 1px solid #ef9011;
+    border: 1px solid #EF9011;
+    padding: 11px 16px;
   }
 `;
 
@@ -344,11 +348,11 @@ export const SoonIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ef9011;
+  border: 1px solid #EF9011;
   border-radius: 20px;
   padding: 4px 12px;
 
-  color: #ef9011;
+  color: #EF9011;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -366,7 +370,7 @@ const ImageBlock = styled(Column)<ImageBlockProps>`
   width: 225px;
   height: 176px;
   border-radius: 16px;
-  background: ${(props) => props.$color || "transparent"};
+  background: ${(props) => props.$color || 'transparent'};
 
   @media (max-width: 1280px) {
     width: 100%;
@@ -379,21 +383,21 @@ const ImageBlock = styled(Column)<ImageBlockProps>`
 
 const customStyles = {
   overlay: {
-    backgroundColor: "rgba(0, 0, 0, 0.75)",
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
     zIndex: 100,
   },
   content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    padding: "0",
-    borderRadius: "16px",
-    background: "#1E242D",
-    border: "0",
-    overflow: "hidden",
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    padding: '0',
+    borderRadius: '16px',
+    background: '#1E242D',
+    border: '0',
+    overflow: 'hidden',
   },
 };
 
@@ -411,10 +415,10 @@ export const HeroSection = () => {
   const mixpanel = useMixpanelContext();
 
   const scrollTo = useCallback(() => {
-    const ref = document.getElementById("scroll-here");
+    const ref = document.getElementById('scroll-here');
     if (ref) {
       const scrollMarginTop = 45;
-      const elementPosition = ref.offsetTop + window.scrollY - scrollMarginTop;
+      const elementPosition = ref.getBoundingClientRect().top + window.scrollY - scrollMarginTop;
       window.scrollTo({
         top: elementPosition,
         behavior: "smooth",
@@ -453,23 +457,24 @@ export const HeroSection = () => {
           <ArrowsDiv onClick={() => scrollTo()}>
             <Player
               src={animatedArrows}
-              style={{ cursor: "pointer", width: "100px", height: "104px" }}
+              style={{ cursor: 'pointer', width: '100px', height: '104px' }}
               autoplay
               loop
             />
           </ArrowsDiv>
         </HeroSectionWrapper>
 
+
         <HeroSectionWrapper>
           <TextDiv>
             <p>Choose your device</p>
           </TextDiv>
 
-          <ProductsSection id="scroll-here">
-            <ProductCard className="choose-devise">
+          <ProductsSection id='scroll-here'>
+            <ProductCard className='choose-devise'>
               <Icon
                 src={chooseDeviseIcon.src}
-                $size={"64px"}
+                $size={'64px'}
                 alt={`choose devise icon`}
               />
               <h2>Choose Your Device</h2>
@@ -477,7 +482,7 @@ export const HeroSection = () => {
 
             <ProductCard>
               <h3>Web App</h3>
-              <ImageBlock $color="#2C3157">
+              <ImageBlock $color='#2C3157'>
                 <AppImage
                   src={desktop_img}
                   width={152}
@@ -485,14 +490,15 @@ export const HeroSection = () => {
                 />
               </ImageBlock>
               <Button
-                as={"a"}
-                href={"/app/yield-offers"}
-                $color={"#0085FF"}
+                as={'a'}
+                href={'/app/yield-offers'}
+                className='card-button'
+                $color={'#0085FF'}
                 $onHoverColor={
-                  "linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #0085FF"
+                  'linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #0085FF'
                 }
-                target={"_blank"}
-                $padding={"12px 16px"}
+                target={'_blank'}
+                $padding={'12px 16px'}
                 onClick={() => {
                   mixpanel.track(`Landing: Open App button (Hero-section)`);
                 }}
@@ -502,33 +508,34 @@ export const HeroSection = () => {
             </ProductCard>
 
             <ProductCard>
-              {<h3>Browser Extension</h3>}
-              <ImageBlock $color="#34342B">
+              <h3>Browser Extension</h3>
+              <ImageBlock $color='#34342B'>
                 <AppImage
                   src={extensions_img}
                   width={152}
-                  alt="Desktop app preview"
+                  alt="Browser Extension preview"
                 />
               </ImageBlock>
               <Button
-                as={"a"}
-                target={"_blank"}
-                href={
-                  "https://chrome.google.com/webstore/detail/yaspfi/djedhmiipclhalmoahhaphocdcdppjcc"
-                }
+                className='card-button'
+                as={'a'}
+                target={'_blank'}
+                href={'https://chrome.google.com/webstore/detail/yaspfi/djedhmiipclhalmoahhaphocdcdppjcc'}
                 onClick={() => {
-                  mixpanel.track(
-                    `Landing: Open Browser Extension chrome store`
-                  );
+                  mixpanel.track(`Landing: Open Browser Extension chrome store`);
                 }}
-                $color={"#EF9011"}
+                $color={'#EF9011'}
                 $onHoverColor={
-                  "linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%), rgb(239, 144, 17)"
+                  'linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%), rgb(239, 144, 17)'
                 }
-                $padding={"12px 16px"}
+                $padding={'12px 16px'}
               >
-                <Icon src={chrome.src} $size={"24px"} alt={`chrome`} />
-                <p color="#fff">Create Wallet</p>
+                <Icon
+                  src={chrome.src}
+                  $size={'24px'}
+                  alt={`chrome`}
+                />
+                <p color='#fff'>Create Wallet</p>
               </Button>
             </ProductCard>
 
@@ -537,22 +544,22 @@ export const HeroSection = () => {
                 <h3>Mobile App</h3>
                 <SoonIcon>Soon</SoonIcon>
               </SoonBlock>
-              <ImageBlock $color="#223C4F">
+              <ImageBlock $color='#223C4F'>
                 <AppImage
                   src={mobile_img}
                   width={152}
-                  alt="Desktop app preview"
+                  alt="Mobile App preview"
                 />
               </ImageBlock>
               <Button
-                className="has-border"
+                className='has-border card-button'
                 onClick={() => {
                   openModal();
                   mixpanel.track(`Landing: Open get on the list modal`);
                 }}
-                $padding={"12px 16px"}
-                $color={"#1A222E"}
-                $onHoverColor={"#151A21"}
+                $padding={'12px 16px'}
+                $color={'#1A222E'}
+                $onHoverColor={'#151A21'}
               >
                 Join Waitlist
               </Button>
@@ -629,7 +636,7 @@ const TextDiv = styled(Column)`
 
   p {
     margin: 0;
-    color: #fff;
+    color: #FFF;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;

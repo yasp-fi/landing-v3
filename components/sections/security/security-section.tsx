@@ -58,7 +58,7 @@ const SecurityBlock = styled(Column)`
       linear-gradient(124deg, #8A50CF 0%, #4A22D2 100%);
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 750px) {
     background: linear-gradient(124deg, #8A50CF 0%, #4A22D2 100%);
   }
 
@@ -74,6 +74,10 @@ const SecurityBlock = styled(Column)`
 
     .yellow {
       color: #FFD84F;
+    }
+
+    @media (max-width: 1265px) {
+      font-size: 48px;
     }
 
     @media (max-width: 1000px) {
@@ -202,23 +206,13 @@ export const SecuritySection: React.FC = () => {
       <SecurityLayout>
         <ElementsRow>
           <SecurityBlock>
-            {/* {isBigScreen ? (
-              <h1>
-                Security Is Not <br />A Feature,
-                <br />
-                <span className={`yellow`}>It's A Foundation </span>
-                <br />
-                One That YaspFi Is Built On
-              </h1>
-            ) : ( */}
-              <h1>
-                Security is not a feature,
-                <br />
-                <span className={`yellow`}>it's a foundation </span>
-                <br />
-                one that YaspFi is built on
-              </h1>
-            {/* )} */}
+            <h1>
+              Security Is Not <br />A Feature,
+              <br />
+              <span className={`yellow`}>It's A Foundation </span>
+              <br />
+              One That YaspFi Is Built On
+            </h1>
           </SecurityBlock>
 
           <GridElements>
