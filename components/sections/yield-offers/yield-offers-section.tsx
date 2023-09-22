@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import assetsImage from "/public/sections/yield-offers/assets-image.svg";
+import assetsImage from "/public/sections/yield-offers/assets-image.png";
 import trustScore from "/public/sections/yield-offers/trust-score.svg";
 import trustScore_mobile from "/public/sections/yield-offers/trust-score-mobile.svg";
 import { LandingContentBlock } from "../../landing-content-block/landing-content-block";
@@ -73,7 +73,7 @@ const PortfolioContentBlock = styled.div`
     }
   }
 
-  ${Button} {
+  a {
     width: 100%;
     text-align: center;
     display: flex;

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useRef } from 'react';
+import React, { useRef, useCallback } from 'react';
 import styled from 'styled-components';
 import { Icon } from '../icon';
 import Link from 'next/link';
@@ -167,7 +167,7 @@ const ButtonRow = styled(Row)`
     z-index: -10;
   }
 
-  ${Button} {
+  .explore-yaspfi {
     padding: 16px 48px;
 
     p {
@@ -193,17 +193,17 @@ const CompanyIcons = styled(Row)`
 export const JoinUsCallout = () => {
   const mixpanel = useMixpanelContext();
 
-  const scrollTo = () => {
+  const scrollTo = useCallback(() => {
     const ref = document.getElementById('scroll-here');
     if (ref) {
       const scrollMarginTop = 45;
       const elementPosition = ref.getBoundingClientRect().top + window.scrollY - scrollMarginTop;
       window.scrollTo({
         top: elementPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
-  }
+  }, []);
 
   return (
     <LandingContentBlock>
@@ -217,6 +217,7 @@ export const JoinUsCallout = () => {
             </h1>
             <ButtonRow>
               <Button
+                className='explore-yaspfi'
                 $color={'#FFFFFF'}
                 onClick={() => scrollTo()}
                 $onHoverColor={
