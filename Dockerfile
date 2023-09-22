@@ -1,31 +1,64 @@
-FROM node:18-alpine AS deps
+FROM node:20-alpine AS alpine
+
+# setup pnpm on the alpine base
+FROM alpine as base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+RUN pnpm install turbo --global
+
+FROM base AS builder
+# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+RUN apk add --no-cache libc6-compat
+RUN apk update
+# Set working directory
+WORKDIR /app
+COPY . .
+RUN turbo prune --scope=landing --docker
+
+# Add lockfile and package.json's of isolated subworkspace
+FROM base AS installer
+RUN apk add --no-cache libc6-compat
+RUN apk update
 WORKDIR /app
 
-ENV NODE_ENV production
+# First install the dependencies (as they change less often)
+COPY .gitignore .gitignore
+COPY --from=builder /app/out/json/ .
+COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
+COPY --from=builder /app/out/pnpm-workspace.yaml ./pnpm-workspace.yaml
+RUN pnpm install
 
-COPY  apps/landing/.next/standalone/apps/landing/package.json ./package.json
-RUN npm i --legacy-peer-deps --ignore-scripts
+# Build the project
+COPY --from=builder /app/out/full/ .
+COPY turbo.json turbo.json
 
-FROM node:18-alpine AS base
+# Uncomment and use build args to enable remote caching
+# ARG TURBO_TEAM
+# ENV TURBO_TEAM=$TURBO_TEAM
+
+# ARG TURBO_TOKEN
+# ENV TURBO_TOKEN=$TURBO_TOKEN
+
+RUN turbo run build --filter=landing
+
+# use alpine as the thinest image
+FROM alpine AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
-# Uncomment the following line in case you want to disable telemetry during runtime.
-# ENV NEXT_TELEMETRY_DISABLED 1
-
-RUN addgroup --system --gid 1001 nextjs
+# Don't run production as root
+RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
+USER nextjs
 
-COPY --chown=nextjs:nextjs apps/landing/public ./public
+COPY --from=installer /app/apps/landing/next.config.js .
+COPY --from=installer /app/apps/landing/package.json .
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --chown=nextjs:nextjs apps/landing/.next/standalone/apps/landing/ ./
-COPY --chown=nextjs:nextjs apps/landing/.next/static ./.next/static
-COPY --chown=nextjs:nextjs --from=deps app/node_modules ./node_modules
+COPY --from=installer --chown=nextjs:nodejs /app/apps/landing/.next/standalone ./
+COPY --from=installer --chown=nextjs:nodejs /app/apps/landing/.next/static ./apps/landing/.next/static
+COPY --from=installer --chown=nextjs:nodejs /app/apps/landing/public ./apps/landing/public
 
-EXPOSE 4269
-
-USER nextjs
-RUN node -c server.js
-CMD ["node", "server.js"]
+EXPOSE 3000
+CMD node apps/landing/server.js
