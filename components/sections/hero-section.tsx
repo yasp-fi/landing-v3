@@ -499,9 +499,6 @@ export const HeroSection = () => {
                 }
                 target={'_blank'}
                 $padding={'12px 16px'}
-                onClick={() => {
-                  mixpanel.track(`Landing: Open App button (Hero-section)`);
-                }}
               >
                 Open Web App
               </Button>
@@ -521,9 +518,6 @@ export const HeroSection = () => {
                 as={'a'}
                 target={'_blank'}
                 href={'https://chrome.google.com/webstore/detail/yaspfi/djedhmiipclhalmoahhaphocdcdppjcc'}
-                onClick={() => {
-                  mixpanel.track(`Landing: Open Browser Extension chrome store`);
-                }}
                 $color={'#EF9011'}
                 $onHoverColor={
                   'linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%), rgb(239, 144, 17)'

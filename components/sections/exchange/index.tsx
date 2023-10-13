@@ -254,8 +254,6 @@ const ExchangeComponent = () => {
 };
 
 export const ExchangeSection = () => {
-  const mixpanel = useMixpanelContext();
-
   return (
     <LandingContentBlock>
       <ExchangeBlock id={`exchange`}>

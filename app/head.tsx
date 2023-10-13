@@ -2,9 +2,6 @@ import { BASE_APP_URL, DESCRIPTION, TITLE } from '../lib/constants';
 import React from 'react';
 
 export default function Head() {
-  const isProd = process.env.NODE_ENV === 'production';
-  const websiteId = process.env.CRISP_WEBSITE_ID;
-
   return (
     <>
       <title>{TITLE}</title>

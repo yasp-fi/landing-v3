@@ -47,21 +47,8 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 export default function LandingPage() {
   const mixpanel = useMixpanelContext();
-  const visitStartRef = useRef(Date.now());
   useEffect(() => {
-    mixpanel.track(`Landing: visitors count`);
-    mixpanel.people.set({ product: 'Landing' }); // creates 'User'
-
-    const handleBeforeUnload = () => {
-      const visitEnd = Date.now();
-      const visitDuration = (visitEnd - visitStartRef.current) / 60000; // minutes
-
-      mixpanel.track('Landing: Visit Duration in minutes', {
-        Duration: visitDuration.toFixed(2),
-      });
-    };
-    window.addEventListener('beforeunload', handleBeforeUnload);
-    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+    mixpanel.people.set({ product: 'Landing' });
   }, []);
 
   return (

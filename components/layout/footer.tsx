@@ -20,7 +20,6 @@ import { Icon } from '../icon';
 import alchemy from '/public/alchemy-icon.png';
 import Image from 'next/image';
 import Link from 'next/link';
-import useMixpanelContext from '../../lib/mixpanel/MixpanelContextLanding';
 
 const Logo = styled.div`
   width: 36px;
@@ -233,7 +232,6 @@ const AlchemyIcon = styled(Image)`
 `;
 
 export const Footer = () => {
-  const mixpanel = useMixpanelContext();
   return (
     <LayoutWithFill color={'#171d25'}>
       <LandingContentBlock>
@@ -257,23 +255,14 @@ export const Footer = () => {
               <FooterLink
                 target={'_blank'}
                 href={'privacy_policy.pdf'}
-                onClick={() => {
-                  mixpanel.track(`Landing: Privacy Policy button click (Footer)`);
-                }}
               >{`Privacy Policy`}</FooterLink>
               <FooterLink
                 target={'_blank'}
                 href={CAREERS_LINK}
-                onClick={() => {
-                  mixpanel.track(`Landing: Careers button click (Footer)`);
-                }}
               >{`Careers`}</FooterLink>
               <FooterLink
                 target={'_blank'}
                 href={WIKI_LINK}
-                onClick={() => {
-                  mixpanel.track(`Landing: Docs button click (Footer)`);
-                }}
               >{`Docs`}</FooterLink>
             </FooterItem>
 
@@ -281,23 +270,12 @@ export const Footer = () => {
               <FooterItemtitle>{`Products`}</FooterItemtitle>
               <FooterLink
                 href={`https://chrome.google.com/webstore/detail/yaspfi/djedhmiipclhalmoahhaphocdcdppjcc`}
-                onClick={() => {
-                  mixpanel.track(`Landing: Wallet button click (Footer)`);
-                }}
               >{`Wallet`}</FooterLink>
               <FooterLink
                 href={`https://yasp.fi/app/yield-offers`}
-                onClick={() => {
-                  mixpanel.track(
-                    `Landing: DeFi Dashboard button click (Footer)`
-                  );
-                }}
               >{`Yield Offers`}</FooterLink>
               <FooterLink
                 href={`/app/exchange`}
-                onClick={() => {
-                  mixpanel.track(`Landing: Exchange button click (Footer)`);
-                }}
               >{`Exchange`}</FooterLink>
               <FooterLinkWIP>{`Buy Crypto`}</FooterLinkWIP>
             </FooterItem>
@@ -307,16 +285,10 @@ export const Footer = () => {
               <FooterLink
                 href={'https://yasp.fi/app/yield-offers'}
                 target={'_blank'}
-                onClick={() => {
-                  mixpanel.track(`Landing: Web button click (Footer)`);
-                }}
               >{`Web App`}</FooterLink>
               <FooterLink
                 href={'https://chrome.google.com/webstore/detail/yaspfi/djedhmiipclhalmoahhaphocdcdppjcc'}
                 target={'_blank'}
-                onClick={() => {
-                  mixpanel.track(`Landing: Extension button click (Footer)`);
-                }}
               >{`Extension`}</FooterLink>
               <FooterLinkWIP>{`IOS`}</FooterLinkWIP>
               <FooterLinkWIP>{`Google Play`}</FooterLinkWIP>
@@ -334,9 +306,6 @@ export const Footer = () => {
                 <FooterLink
                   target={'_blank'}
                   href={DISCORD}
-                  onClick={() => {
-                    mixpanel.track(`Landing: Discord button click (Footer)`);
-                  }}
                 >{`Discord`}</FooterLink>
               </Row>
               <Row $alignItems={'center'} $gap={'10px'}>
@@ -349,9 +318,6 @@ export const Footer = () => {
                 <FooterLink
                   target={'_blank'}
                   href={TWITTER}
-                  onClick={() => {
-                    mixpanel.track(`Landing: Twitter button click (Footer)`);
-                  }}
                 >{`Twitter`}</FooterLink>
               </Row>
               <Row $alignItems={'center'} $gap={'10px'}>
@@ -364,9 +330,6 @@ export const Footer = () => {
                 <FooterLink
                   target={'_blank'}
                   href={GITHUB}
-                  onClick={() => {
-                    mixpanel.track(`Landing: Github button click (Footer)`);
-                  }}
                 >{`GitHub`}</FooterLink>
               </Row>
               <Row $alignItems={'center'} $gap={'10px'}>
@@ -379,9 +342,6 @@ export const Footer = () => {
                 <FooterLink
                   target={'_blank'}
                   href={'mailto:hello@yasp.fi'}
-                  onClick={() => {
-                    mixpanel.track(`Landing: Mail Us button click (Footer)`);
-                  }}
                 >{`Mail Us`}</FooterLink>
               </Row>
             </FooterItem>
