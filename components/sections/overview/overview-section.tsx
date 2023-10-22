@@ -401,7 +401,7 @@ export const OverviewSection: React.FC<StakingSlider> = () => {
                 <Column $gap='12px'>
                   <h2>Privacy First</h2>
                   <p>
-                    Your privacy is our priority.<br />
+                    Your privacy is our priority<br />
                     We neither store nor track any personal data, ensuring your information remains confidential.
                   </p>
                 </Column>
