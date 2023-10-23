@@ -264,6 +264,10 @@ export const Footer = () => {
                 target={'_blank'}
                 href={WIKI_LINK}
               >{`Docs`}</FooterLink>
+              <FooterLink
+                target={'_blank'}
+                href={`https://discord.com/channels/989511726917619753/1089528381625876602`}
+              >{`Support`}</FooterLink>
             </FooterItem>
 
             <FooterItem>

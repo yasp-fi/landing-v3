@@ -1,4 +1,5 @@
 import { Main } from '../components/layout/background';
+import Head from './head';
 import { Footer } from '../components/layout/footer';
 import { StyledComponentsRegistry } from './registry';
 import { Poppins } from 'next/font/google';
@@ -25,6 +26,7 @@ export default function RootLayout({
       <StyledComponentsRegistry>
         <GlobalStyle fontFamily={poppins.style.fontFamily} />
         <html lang={'en'}>
+          <Head/>
           <body>
             <Main>
               {children}
