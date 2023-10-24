@@ -1,5 +1,5 @@
-import { BASE_APP_URL, DESCRIPTION, TITLE } from '../lib/constants';
-import React from 'react';
+import { BASE_APP_URL, DESCRIPTION, TITLE } from "../lib/constants";
+import React from "react";
 import Script from "next/script";
 
 export default function Head() {
@@ -40,9 +40,14 @@ export default function Head() {
         fbq('track', 'PageView');
         `}
       </Script>
-      <noscript><img height="1" width="1" style="display:none"
-                     src="https://www.facebook.com/tr?id=1075475973898383&ev=PageView&noscript=1"
-      /></noscript>
+      <noscript>
+        <img
+          height="1"
+          width="1"
+          style={{ display: "none" }}
+          src="https://www.facebook.com/tr?id=1075475973898383&ev=PageView&noscript=1"
+        />
+      </noscript>
     </>
   );
 }
