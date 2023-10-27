@@ -92,8 +92,6 @@ const Content = styled.p`
 export const StyledToastContainer = styled(ToastContainer).attrs({
   className: `toast-container`,
   toastClassName: `toast`,
-  bodyClassName: `body`,
-  progressClassName: `progress`,
   position: 'top-right',
   autoClose: 5000,
 })`
