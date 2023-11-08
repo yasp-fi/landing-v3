@@ -447,8 +447,9 @@ export const HeroSection = () => {
               <span className={`blue`}>one-stop</span>
               <span className={`pink`}> shop </span>
               {`\n`}
-              for
-              <span className={`yellow`}> everything DeFi</span>
+              for<span className={'yellow'}> everything</span>
+              {`\n`}
+              <span className={`yellow`}>DeFi</span>
             </h1>
           </TitleBlock>
 

@@ -26,6 +26,7 @@ export default function Head() {
       <meta name="twitter:description" content={DESCRIPTION} />
       <meta name="twitter:image" content={`${BASE_APP_URL}/yasp-thumb.png`} />
       <meta name="twitter:image:alt" content={DESCRIPTION} />
+{/*
       <Script>
         {`
         !function(f,b,e,v,n,t,s)
@@ -48,6 +49,7 @@ export default function Head() {
           src="https://www.facebook.com/tr?id=1075475973898383&ev=PageView&noscript=1"
         />
       </noscript>
+*/}
     </>
   );
 }
