@@ -1,10 +1,16 @@
 import { SupportedChain } from './types';
 import Image from 'next/image';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import { breakPointsConf, colors } from '../../../lib/constants';
 
-const Icon = styled(Image)`
+const Icon = styled(Image)<{ $isAvailable: boolean }>`
   margin-bottom: 0;
+
+  ${(props) => props.$isAvailable ? css`
+    svg {
+      fill: #7d7d7d;
+    }
+  ` : null}
 `;
 
 type ContentProps = {
@@ -70,7 +76,7 @@ export const ChainCard = ({
       $gradientBg={gradientBg}
       $shouldLinkToNext={shouldLinkToNext}
     >
-      <Icon src={chain.notAvailableLogo ? chain.notAvailableLogo : chain.logo} width={32} height={32} alt={chain.name} />
+      <Icon $isAvailable={chain.isSupported} src={chain.notAvailableLogo ? chain.notAvailableLogo : chain.logo} width={32} height={32} alt={chain.name} />
       <ChainName>{chain.name}</ChainName>
     </Content>
   );

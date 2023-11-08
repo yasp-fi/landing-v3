@@ -444,13 +444,11 @@ export const HeroSection = () => {
             <h1>
               YaspFi is an
               {`\n`}
-              <span className={`pink`}>all-in-one</span>
+              <span className={`blue`}>one-stop</span>
+              <span className={`pink`}> shop </span>
               {`\n`}
-              <span className={`yellow`}>wallet </span>focused
-              {`\n`}
-              on sustainable
-              {`\n`}
-              <span className={`blue`}>DeFi yield</span>
+              for
+              <span className={`yellow`}> everything DeFi</span>
             </h1>
           </TitleBlock>
 

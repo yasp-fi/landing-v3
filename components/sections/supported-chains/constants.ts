@@ -1,5 +1,5 @@
-import { SupportedChain } from './types';
-import { ChainNativeSymbols } from '@yasp/models';
+import {SupportedChain} from './types';
+import {ChainNativeSymbols} from '@yasp/models';
 
 export const chainData: SupportedChain[] = [
   {
@@ -19,14 +19,6 @@ export const chainData: SupportedChain[] = [
     platforms: { desktop: true, mobile: false },
   },
   {
-    name: 'Moonbeam',
-    type: ChainNativeSymbols.Moonbeam,
-    logo: '/sections/supported-chains/icons/moonbeam.svg',
-    gradientBg: 'linear-gradient(270deg, #E42E89 0%, #8B69B6 53.12%, #6FC6C7 100%);',
-    isSupported: true,
-    platforms: { desktop: true, mobile: false },
-  },
-  {
     name: 'Bitcoin',
     // @ts-ignore
     type: ChainNativeSymbols.Bitcoin,
@@ -39,8 +31,9 @@ export const chainData: SupportedChain[] = [
     name: 'zkSync Era',
     type: ChainNativeSymbols.ZkSync,
     logo: '/sections/supported-chains/icons/zkSync.svg',
+    notAvailableLogo: '/sections/supported-chains/icons/zkSync-notAvailable.svg',
     gradientBg: 'linear-gradient(270deg, #9C7BEE 0%, #516AE8 100%)',
-    isSupported: true,
+    isSupported: false,
     platforms: { desktop: true, mobile: false },
   },
   {
@@ -48,31 +41,6 @@ export const chainData: SupportedChain[] = [
     type: ChainNativeSymbols.BinanceSmartChain,
     logo: '/sections/supported-chains/icons/binance.svg',
     gradientBg: 'linear-gradient(270deg, #CC9A1F -0.32%, #FEDB84 100%);',
-    isSupported: true,
-    platforms: { desktop: true, mobile: false },
-  },
-  {
-    name: 'Sui',
-    // @ts-ignore
-    type: ChainNativeSymbols.Sui,
-    logo: '/sections/supported-chains/icons/sui.svg',
-    notAvailableLogo: '/sections/supported-chains/icons/sui-notAvailable.svg',
-    isSupported: false,
-    platforms: { desktop: false, mobile: false },
-  },
-  {
-    name: 'Aurora',
-    type: ChainNativeSymbols.Aurora,
-    logo: '/sections/supported-chains/icons/aurora.svg',
-    gradientBg: 'linear-gradient(90deg, #5DF3D0 2.07%, #24882E 100%);',
-    isSupported: true,
-    platforms: { desktop: true, mobile: false },
-  },
-  {
-    name: 'Tron',
-    type: ChainNativeSymbols.Tron,
-    logo: '/sections/supported-chains/icons/tron.svg',
-    gradientBg: 'linear-gradient(270deg, #FF060A -0.33%, #FFBFC0 99.67%);',
     isSupported: true,
     platforms: { desktop: true, mobile: false },
   },
@@ -109,14 +77,6 @@ export const chainData: SupportedChain[] = [
     platforms: { desktop: true, mobile: false },
   },
   {
-    name: 'Solana',
-    type: ChainNativeSymbols.Solana,
-    logo: '/sections/supported-chains/icons/solana.svg',
-    notAvailableLogo: '/sections/supported-chains/icons/solana-notAvailable.svg',
-    isSupported: false,
-    platforms: { desktop: false, mobile: false },
-  },
-  {
     name: 'Avalanche',
     type: ChainNativeSymbols.Avalanche,
     logo: '/sections/supported-chains/icons/avalanche.svg',
@@ -141,36 +101,12 @@ export const chainData: SupportedChain[] = [
     platforms: { desktop: true, mobile: false }
   },
   {
-    name: 'Celo',
-    type: ChainNativeSymbols.Celo,
-    logo: `/sections/supported-chains/icons/celo.svg`,
-    gradientBg: `linear-gradient(270deg, #CDD24B 0%, #4A5940 100%);`,
-    isSupported: true,
-    platforms: { desktop: true, mobile: false }
-  },
-  {
     name: 'Base',
     type: ChainNativeSymbols.Base,
     logo: '/sections/supported-chains/icons/base.svg',
     gradientBg: `linear-gradient(270deg, #1652F0 0%, #93AFF9 100%);`,
     isSupported: true,
     platforms: { desktop: true, mobile: false }
-  },
-  {
-    name: 'Cronos',
-    type: ChainNativeSymbols.Cronos,
-    logo: '/sections/supported-chains/icons/cronos.svg',
-    gradientBg: 'linear-gradient(270deg, #E42E89 0%, #8B69B6 53.12%, #6FC6C7 100%);',
-    isSupported: true,
-    platforms: { desktop: true, mobile: false },
-  },
-  {
-    name: 'Moonriver',
-    type: ChainNativeSymbols.Moonriver,
-    logo: '/sections/supported-chains/icons/moonriver.svg',
-    gradientBg: 'linear-gradient(270deg, #133629 0%, #F2B705 100%);',
-    isSupported: true,
-    platforms: { desktop: true, mobile: false },
   },
   {
     name: 'Shardeum',
@@ -180,6 +116,14 @@ export const chainData: SupportedChain[] = [
     gradientBg: `linear-gradient(270deg, #0E0E0E 0%, #4D4D4D 100%);`,
     isSupported: false,
     platforms: { desktop: false, mobile: false },
+  },
+  {
+    name: 'Scroll',
+    type: ChainNativeSymbols.Scroll,
+    logo: `/sections/supported-chains/icons/scroll.svg`,
+    gradientBg: `linear-gradient(270deg, #3F3F3F 0%, #EBC28E 100%);`,
+    isSupported: true,
+    platforms: { desktop: true, mobile: false },
   }
   // {
   //   name: 'Aptos',

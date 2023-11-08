@@ -239,7 +239,7 @@ const AccountAbstraction = styled(Row)`
   border-radius: 16px;
   background: linear-gradient(180deg, #8281FF 0%, #605FE5 100%);
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
-  
+
   @media (max-width: 1280px) {
     flex-wrap: nowrap;
   }
@@ -263,7 +263,7 @@ const AccountAbstraction = styled(Row)`
 
     @media (max-width: 768px) {
       font-size: 16px;
-      line-height: 27px; 
+      line-height: 27px;
     }
   }
 `;
@@ -300,7 +300,7 @@ const PrivacyBlock = styled(Column)`
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: radial-gradient(103.34% 103.35% at 98.38% 97.72%, rgba(174, 68, 215, 0.11) 0%, rgba(47, 39, 69, 0.88) 61.04%, #1A222E 100%);
-  
+
   @media (max-width: 1280px) {
     width: 50%;
     margin: 0;
@@ -402,7 +402,7 @@ export const OverviewSection: React.FC<StakingSlider> = () => {
                   <h2>Privacy First</h2>
                   <p>
                     Your privacy is our priority<br />
-                    We neither store nor track any personal data, ensuring your information remains confidential.
+                    We neither store nor track any personal data, ensuring your information remains confidential
                   </p>
                 </Column>
               </PrivacyBlock>

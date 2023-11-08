@@ -153,7 +153,7 @@ export function SupportedChainsSection({
       <Wrap>
         <Title>The Future is Multichain</Title>
         <Description>
-          16+ supported networks for a one-stop DeFi experience
+          12+ supported networks for a one-stop DeFi experience
         </Description>
         <SupportedChainResponsiveContainer>
           {supportedChains.map((chain, i) => {
