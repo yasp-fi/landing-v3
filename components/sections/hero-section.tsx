@@ -442,7 +442,7 @@ export const HeroSection = () => {
         <HeroSectionWrapper>
           <TitleBlock>
             <h1>
-              YaspFi is an
+              YaspFi is a
               {`\n`}
               <span className={`blue`}>one-stop</span>
               <span className={`pink`}> shop </span>
