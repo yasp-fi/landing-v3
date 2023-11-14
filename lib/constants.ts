@@ -31,8 +31,7 @@ export const WEB_APP_URL = `${BASE_APP_URL}/investments`;
 
 export const TITLE =
   'YaspFi';
-export const DESCRIPTION =
-  'Meet YaspFi: the non-custodial wallet for DeFi. Store, earn yield, & exchange on multiple networks without losing access. Get analytics & risk assessment scores to make data-driven choices. Our goal is to make decentralized finance more user-friendly, transparent, & accessible';
+export const DESCRIPTION = `YaspFi is a one-stop shop for everything DeFi`;
 
 export const colors = {
   primaryDarkBlue: `#171D25`,
