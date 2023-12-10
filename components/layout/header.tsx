@@ -111,6 +111,10 @@ const HugeButtons = styled(Button)`
     font-style: normal;
     font-weight: 700;
     letter-spacing: -0.2px;
+
+    &:active {
+      background: none;
+    }
   }
 `;
 

@@ -200,6 +200,10 @@ const ExchangeBgLayout = styled(Column)`
       font-weight: 700;
       line-height: normal;
       letter-spacing: -0.2px;
+
+      &:active {
+        background: none;
+      }
     }
   }
 `;
