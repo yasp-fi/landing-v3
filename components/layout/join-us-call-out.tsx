@@ -178,6 +178,10 @@ const ButtonRow = styled(Row)`
       line-height: 24px;
       letter-spacing: -0.2px;
       margin: 0;
+
+      &:active {
+        background: none;
+      }
     }
   }
 `;

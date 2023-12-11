@@ -89,6 +89,10 @@ const PortfolioContentBlock = styled.div`
       font-weight: 700;
       line-height: 28px;
       letter-spacing: -0.2px;
+
+      &:active {
+        background: none;
+      }
     }
 
     img {

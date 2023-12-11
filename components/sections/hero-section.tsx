@@ -319,6 +319,10 @@ const ProductCard = styled.div`
       font-weight: 700;
       letter-spacing: -0.2px;
       white-space: nowrap;
+
+      &:active {
+        background: none;
+      }
     }
   }
 
