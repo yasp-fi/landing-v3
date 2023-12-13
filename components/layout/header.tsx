@@ -177,27 +177,6 @@ export const Header = () => {
             />
           </Button> */}
 
-          <HugeButtons
-            className='create-wallet-button'
-            as={'a'}
-            $color={'#EF9011'}
-            target={'_blank'}
-            href={'https://chrome.google.com/webstore/detail/yaspfi/djedhmiipclhalmoahhaphocdcdppjcc'}
-            $padding={'12px 24px'}
-            $radius={'12px'}
-            $onHoverColor={'linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%), rgb(239, 144, 17)'}
-            onClick={() => {
-              mixpanel.track(`Landing: Create Wallet button (Header)`);
-            }}
-          >
-            <Icon
-              src={chrome.src}
-              $size={'24px'}
-              alt={`chrome`}
-            />
-            <p color='#fff'>Create Wallet</p>
-          </HugeButtons>
-
           <>
             <HugeButtons
             className='open-app-desktop'

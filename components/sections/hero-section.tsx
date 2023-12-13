@@ -271,6 +271,7 @@ const ProductsSection = styled.div`
 
 const ProductCard = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -504,35 +505,6 @@ export const HeroSection = () => {
                 $padding={'12px 16px'}
               >
                 Open Web App
-              </Button>
-            </ProductCard>
-
-            <ProductCard>
-              <h3>Browser Extension</h3>
-              <ImageBlock $color='#34342B'>
-                <AppImage
-                  src={extensions_img}
-                  width={152}
-                  alt="Browser Extension preview"
-                />
-              </ImageBlock>
-              <Button
-                className='card-button'
-                as={'a'}
-                target={'_blank'}
-                href={'https://chrome.google.com/webstore/detail/yaspfi/djedhmiipclhalmoahhaphocdcdppjcc'}
-                $color={'#EF9011'}
-                $onHoverColor={
-                  'linear-gradient(0deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%), rgb(239, 144, 17)'
-                }
-                $padding={'12px 16px'}
-              >
-                <Icon
-                  src={chrome.src}
-                  $size={'24px'}
-                  alt={`chrome`}
-                />
-                <p color='#fff'>Create Wallet</p>
               </Button>
             </ProductCard>
 
