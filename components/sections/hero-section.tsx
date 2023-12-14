@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import { breakPointsConf, colors } from '../../lib/constants';
-import React, { useRef, useState, useCallback } from 'react';
+import React, {useRef, useState, useCallback, useEffect} from 'react';
+import { useSearchParams } from "next/navigation";
 import styled from 'styled-components';
 import { Player } from '@lottiefiles/react-lottie-player';
 
@@ -408,6 +409,14 @@ const customStyles = {
 
 export const HeroSection = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const params = useSearchParams();
+
+  useEffect(() => {
+    if (params && !!params.get('waitlist')) {
+      setModalIsOpen(true);
+    }
+  }, [params]);
 
   const openModal = () => {
     setModalIsOpen(true);
